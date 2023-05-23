@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom'
 import './Pagina-principal.css';
+import Carrito from '../funcionalidades/Carrito';
 // import { Link } from 'react-router-dom'
 
 export const Header = () => {
@@ -13,6 +14,12 @@ export const Header = () => {
 }
 
 function Menu() {
+  const [isCartOpen, setCartOpen] = useState(false);
+
+  const toggleCart = () => {
+    setCartOpen(!isCartOpen);
+  };
+
   return (
     <div className="menu">
       <div className="header">
@@ -41,13 +48,14 @@ function Menu() {
             </a>
           </div>
           <div className="cart">
-            <a href="user" className="cart-icon">
+            <a href="user" className="cart-icon" onClick={toggleCart}>
               {/* <img src="" alt="user" /> */}
               🛒
             </a>
           </div>
         </div>
       </div>
+      <Carrito isOpen={isCartOpen} onClose={() => setCartOpen(false)} />
     </div>
   );
 }
