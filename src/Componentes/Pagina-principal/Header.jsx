@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
-import { Outlet } from 'react-router-dom'
+import { Outlet, Link } from 'react-router-dom'
 import './Pagina-principal.css';
 import Carrito from '../funcionalidades/Carrito';
+import burguer from '../Pagina-principal/img-header/Hamburger_icon.svg.png'
+import logo from '../Pagina-principal/img-header/logo.png'
+import search from '../Pagina-principal/img-header/search.png'
+import user from '../Pagina-principal/img-header/image 6.png'
+import cart from '../Pagina-principal/img-header/image 5.png'
+
 // import { Link } from 'react-router-dom'
 
 export const Header = () => {
@@ -24,34 +30,29 @@ function Menu() {
     <div className="menu">
       <div className="header">
         <div className="burger-menu">
-          <a href="user" className="burger-icon">
-            {/* <img src="" alt="burger" /> */}
-            🍔
-          </a>
+        <button className="burger-icon">
+        <img src={burguer} alt="img-burger" />
+        </button>
         </div>
         <div className="logo">
-          <a href="index.html">
-            {/* <img src="" alt="" /> */}
-            📢
-          </a>
+          <Link to="#">
+          <img src={logo} alt="img-logo" />
+          </Link>
         </div>
         <div className="right-align-elements">
           <div className="search-bar">
-            {/* <img src="" alt="" className="searchIcon" /> */}
-            🔎
-            <input type="text" placeholder="Search..." className="searchInput" />
+             <img src={search} alt="img-search" />
+             <input type="text" placeholder="Search..." className="searchInput" />
           </div>
           <div className="user">
-            <a href="user">
-              {/* <img src="" alt="user" /> */}
-              👤
-            </a>
+            <Link to="#">
+            <img src={user} alt="img-user" />
+            </Link>
           </div>
-          <div className="cart">
-            <a href="user" className="cart-icon" onClick={toggleCart}>
-              {/* <img src="" alt="user" /> */}
-              🛒
-            </a>
+          <div className="cartIcon">
+            <button className="cart-icon" onClick={toggleCart}>
+            <img src={cart} alt="img-cart" />
+            </button>
           </div>
         </div>
       </div>

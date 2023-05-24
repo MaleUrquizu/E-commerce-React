@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import '../Pages/Descripcion.css'
 import Carrito from '../Componentes/funcionalidades/Carrito';
 
 export const Descripcion = () => {
@@ -7,7 +8,7 @@ export const Descripcion = () => {
   const [cartProducts, setCartProducts] = useState([]);
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products/1')
+    fetch('https://fakestoreapi.com/products/2')
       .then(response => response.json())
       .then(data => setProduct(data));
   }, []);
